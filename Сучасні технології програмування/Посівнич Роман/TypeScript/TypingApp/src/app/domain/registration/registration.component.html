@@ -1,0 +1,40 @@
+<div class="container" style="width: 400px; margin: auto; margin-top: 100px;">
+  <h2 class="text-center">Registration</h2>
+
+  <form (ngSubmit)="register()" #form="ngForm">
+    <div class="input-wrapper">
+      <input type="email"
+             name="email"
+             id="user-email"
+             [(ngModel)]="email"
+             required
+             spellcheck="false" />
+      <label for="user-email">Email</label>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="password"
+             name="password"
+             id="user-password"
+             [(ngModel)]="password"
+             required
+             spellcheck="false" />
+      <label for="user-password">Password</label>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="password"
+             name="passwordConf"
+             id="user-password-conf"
+             [(ngModel)]="password_conf"
+             required
+             spellcheck="false" />
+      <label for="user-password-conf">Password confirmation</label>
+    </div>
+
+    <div class="flex">
+      <button type="button" routerLink="/login">Login</button>
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

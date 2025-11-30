@@ -1,0 +1,127 @@
+<div class="profile-wrapper">
+  <!-- User Info -->
+  <div class="profile-info" *ngIf="userDetail">
+    <p><strong>Name:</strong> {{ userDetail.fullName }}</p>
+    <p><strong>Time Typing:</strong> {{ formatTime(timeTyping) }}</p>
+    <p><strong>Number of Tests:</strong> {{ records.length }}</p>
+  </div>
+
+  <!-- Level & XP -->
+  <div class="level-section" *ngIf="userDetail">
+    <p class="level">Level: {{ userDetail.displayLevel || userDetail.level }}</p>
+    <p class="xp">XP: {{ userDetail.experiencePoints }} / {{ userDetail.experienceToNextLevel }}</p>
+    <div class="xp-bar-wrapper">
+      <div class="xp-bar" [style.width.%]="(userDetail.experiencePoints / userDetail.experienceToNextLevel) * 100"></div>
+    </div>
+  </div>
+
+  <!-- Typing Heatmap -->
+  <div class="heatmap-wrapp block">
+    <h3>Typing Heatmap</h3>
+    <div class="heatmap">
+      <div class="month" *ngFor="let month of months">
+        <div class="month-name">{{ month }}</div>
+        <div class="days">
+          <div class="day"
+               *ngFor="let value of heatmapData[month]; let i = index"
+               [ngClass]="initializeHeatmapLevel(value)"
+               [title]="month + ' ' + (i + 1) + ': ' + value + ' records'">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="legend">
+      <span>Less</span>
+      <div class="legend-scale">
+        <div class="level-0">1</div>
+        <div class="level-1">2</div>
+        <div class="level-2">3</div>
+        <div class="level-3">4</div>
+        <div class="level-4">5</div>
+        <div class="level-5">6</div>
+      </div>
+      <span>More</span>
+    </div>
+  </div>
+
+
+
+  <!-- Chart -->
+  <div class="chart-section block" *ngIf="records.length">
+    <h3>Typing Progress</h3>
+    <canvas baseChart [data]="lineChartData"
+            [options]="lineChartOptions"
+            [type]="'line'">
+    </canvas>
+  </div>
+
+  <!-- Statistics -->
+  <div class="profile-stats block" *ngIf="records.length">
+    <div class="stat-column">
+      <div class="label">Tests Started</div>
+      <div class="value">{{ testsStarted }}</div>
+      <div class="label">Highest WPM</div>
+      <div class="value">{{ highestWpm }}</div>
+      <div class="label">Highest Raw WPM</div>
+      <div class="value">{{ averageRawWpm }}</div>
+      <div class="label">Highest Accuracy</div>
+      <div class="value">{{ highestAccuracy }}%</div>
+      <div class="label">Highest Consistency</div>
+      <div class="value">{{ highestConsistency }}%</div>
+    </div>
+    <div class="stat-column">
+      <div class="label">Tests Completed</div>
+      <div class="value">{{ testsCompleted }} (100%)</div>
+      <div class="sub">0.0 restarts per completed test</div>
+      <div class="label">Average Raw WPM</div>
+      <div class="value">{{ averageRawWpm }}</div>
+      <div class="label">Avg Accuracy</div>
+      <div class="value">{{ averageRawAccuracy }}%</div>
+      <div class="label">Avg Consistency</div>
+      <div class="value">{{ averageRawConsistency }}%</div>
+    </div>
+    <div class="stat-column">
+      <div class="label">Estimated Words Typed</div>
+      <div class="value">{{ estimatedWordsTyped }}</div>
+      <div class="label">Time Typing</div>
+      <div class="value">{{ formatTime(timeTyping) }}</div>
+    </div>
+  </div>
+
+  <!-- Records Table -->
+  <div class="statistic-wrapp block" *ngIf="reversedRecords.length">
+  <div class="header-info">
+    <div>WPM</div>
+    <div>Raw</div>
+    <div>Accuracy</div>
+    <div>Chars</div>
+    <div>Match Time</div>
+    <div>Date Time</div>
+    <div>Mode</div>
+    <div>Length</div>
+    <div>Language</div>
+  </div>
+  <div class="record-info" *ngFor="let record of reversedRecords; trackBy: trackByDateRecord">
+    <div>{{ record.wpm }}</div>
+    <div>{{ record.raw }}</div>
+    <div>{{ record.accuracy }}%</div>
+    <div>{{ record.chars }}</div>
+    <div>{{ record.matchTime }} sec</div>
+    <div>{{ record.dateRecord | date: 'HH:mm dd-MMM' }}</div>
+    <div>{{ record.mode === 0 ? 'Time' : 'Words' }}</div>
+    <div>
+      {{ record.mode === 0 
+         ? (record.gameLength / 1000) + ' sec' 
+         : record.gameLength + ' words' 
+      }}
+    </div>
+    <div>{{ record.language.toUpperCase() }}</div>
+  </div>
+</div>
+
+  <!-- Navigation Buttons -->
+  <div class="button-container">
+    <button routerLink="/typing-game" class="button">Back</button>
+    <button (click)="logout()" class="button logout-button">Logout</button>
+  </div>
+</div>

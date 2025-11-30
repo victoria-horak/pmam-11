@@ -1,0 +1,60 @@
+
+<div id="lesson" tabindex="0" (click)="this.focusGame()" (blur)="pauseTimer()" appKeyup
+  (actionAllowKey)="this.increasePocition($event)" (actionBackspace)="this.decreasePocition()"
+  (actionSpace)="this.spacePosition()" #lessonContainer>
+  <div id="words" class="words-container">
+    <div class="word">
+      <span *ngFor="let letter of lettersContainer" [ngClass]="getStyles(letter)">{{ letter.letter }}</span>
+    </div>
+  </div>
+  <div id="cursor" #cursor></div>
+  <div id="focus-error">Click here to focus</div>
+</div>
+<div class="restart">
+  <span class="material-symbols-outlined" (click)="newGame()">
+    replay
+  </span>
+</div>
+<div class="keyboard-wrapper">
+  <div class="keyboard">
+    <div class="row">
+      <div class="key" id="q">q</div>
+      <div class="key" id="w">w</div>
+      <div class="key" id="e">e</div>
+      <div class="key" id="r">r</div>
+      <div class="key" id="t">t</div>
+      <div class="key" id="y">y</div>
+      <div class="key" id="u">u</div>
+      <div class="key" id="i">i</div>
+      <div class="key" id="o">o</div>
+      <div class="key" id="p">p</div>
+    </div>
+    <div class="row">
+      <div class="key" id="a">a</div>
+      <div class="key" id="s">s</div>
+      <div class="key" id="d">d</div>
+      <div class="key" id="f">f</div>
+      <div class="key" id="g">g</div>
+      <div class="key" id="h">h</div>
+      <div class="key" id="j">j</div>
+      <div class="key" id="k">k</div>
+      <div class="key" id="l">l</div>
+      <div class="key" id=";">;</div>
+    </div>
+    <div class="row">
+      <div class="key" id="z">z</div>
+      <div class="key" id="x">x</div>
+      <div class="key" id="c">c</div>
+      <div class="key" id="v">v</div>
+      <div class="key" id="b">b</div>
+      <div class="key" id="n">n</div>
+      <div class="key" id="m">m</div>
+      <div class="key" id=",">,</div>
+      <div class="key" id=".">.</div>
+      <div class="key" id="/">/</div>
+    </div>
+    <div class="row">
+      <div class="key space" id="space">Space</div>
+    </div>
+  </div>
+</div>

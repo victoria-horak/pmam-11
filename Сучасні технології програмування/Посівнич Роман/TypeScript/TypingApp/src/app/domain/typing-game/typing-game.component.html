@@ -1,0 +1,81 @@
+<div class="config-wrapper">
+  <div class="menu-config">
+    <div class="mode">
+      <div class="text-button button-conteiner" (click)="selectMode('time')" [class.active]="selectedMode === 'time'">
+        <span class="material-symbols-outlined">
+          schedule
+        </span>
+        <span>
+          timer
+        </span>
+      </div>
+      <div class="text-button button-conteiner" (click)="selectMode('words')" [class.active]="selectedMode === 'words'">
+        <span class="material-symbols-outlined">
+          abc
+        </span>
+        <span>
+          words
+        </span>
+      </div>
+    </div>
+    <div class="time" [class.hidden]="selectedMode !== 'time'">
+      <div class="text-button" (click)="selectTime(15)" [class.active]="gameTime === 15000">
+        <span>15</span>
+      </div>
+      <div class="text-button" (click)="selectTime(30)" [class.active]="gameTime === 30000">
+        <span>30</span>
+      </div>
+      <div class="text-button" (click)="selectTime(60)" [class.active]="gameTime === 60000">
+        <span>60</span>
+      </div>
+      <div class="text-button" (click)="selectTime(90)" [class.active]="gameTime === 90000">
+        <span>90</span>
+      </div>
+    </div>
+    <div class="word-count" [class.hidden]="selectedMode !== 'words'">
+      <div class="text-button" (click)="selectWords(10)" [class.active]="numberOfWords === 10">
+        <span>10</span>
+      </div>
+      <div class="text-button" (click)="selectWords(25)" [class.active]="numberOfWords === 25">
+        <span>25</span>
+      </div>
+      <div class="text-button" (click)="selectWords(50)" [class.active]="numberOfWords === 50">
+        <span>50</span>
+      </div>
+      <div class="text-button" (click)="selectWords(125)" [class.active]="numberOfWords === 125">
+        <span>125</span>
+      </div>
+    </div>
+    <div class="language">
+      <div class="text-button button-conteiner" (click)="selectLanguage('en')"
+        [class.active]="selectedLanguage === 'en'">
+        <span>EN</span>
+      </div>
+      <div class="text-button button-conteiner" (click)="selectLanguage('uk')"
+        [class.active]="selectedLanguage === 'uk'">
+        <span>UA</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="selectedMode === 'time'" class="counter timer">{{ minutes }}:{{ seconds }}</div>
+<div *ngIf="selectedMode === 'words'" class="counter words-counter">{{wordsCounter}}/{{numberOfWords}}</div>
+
+
+<div id="game" tabindex="0" (click)="this.focusGame()" (blur)="pauseTimer()" appKeyup
+  (actionAllowKey)="this.increasePocition($event)" (actionBackspace)="this.decreasePocition()"
+  (actionSpace)="this.spacePosition()" #game>
+  <div id="words" class="words-container">
+    <div class="word">
+      <span *ngFor="let letter of lettersContainer" [ngClass]="getStyles(letter)">{{ letter.letter }}</span>
+    </div>
+  </div>
+  <div id="cursor" #cursor></div>
+  <div id="focus-error">Click here to focus</div>
+</div>
+<div class="restart">
+  <span class="material-symbols-outlined" (click)="newGame()">
+    replay
+  </span>
+</div>

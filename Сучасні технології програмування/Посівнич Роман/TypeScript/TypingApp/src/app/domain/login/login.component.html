@@ -1,0 +1,33 @@
+<div class="container" style="width: 400px; margin: auto; margin-top: 100px;">
+  <h2 class="text-center">Login</h2>
+
+  <form (ngSubmit)="login()" #form="ngForm">
+    <div class="input-wrapper">
+      <input type="email"
+             name="email"
+             id="user-email"
+             [(ngModel)]="email"
+             required
+             spellcheck="false" />
+      <label for="user-email">Email</label>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="password"
+             name="password"
+             id="user-password"
+             [(ngModel)]="password"
+             required
+             spellcheck="false" />
+      <label for="user-password">Password</label>
+    </div>
+
+    <div class="flex">
+      <button type="button" routerLink="/registration">Register</button>
+      <button type="submit">Login</button>
+    </div>
+  </form>
+
+  <!-- Google Sign-in container (за потреби) -->
+  <div id="g_id_onload"></div>
+</div>

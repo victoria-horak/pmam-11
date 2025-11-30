@@ -1,0 +1,170 @@
+:root {
+  --bgColor: #1e1e1e;
+  --textPrimary: #ffffff;
+  --textSecondary: #aaaaaa;
+  --primaryColor: #f58518;
+  --errorColor: #e53935;
+  --successColor: #4caf50;
+  --borderColor: #444;
+  --inputBg: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --gap: 1rem;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius:  var(--radius-md);
+  --elevation-1: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --elevation-2: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --elevation-3: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --header-height: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bgColor);
+  color: var(--textPrimary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+main {
+  width: 100%;
+  max-width: clamp(320px, 100%, 800px);
+  margin: 3.125rem auto;
+  margin-top: 100px;
+  padding: 1.25rem;
+}
+
+button {
+  padding: 0.625rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--primaryColor);
+  color: var(--textPrimary);
+  cursor: pointer;
+  box-shadow: var(--elevation-1);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--primaryColor) 90%, white);
+  box-shadow: var(--elevation-2);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--primaryColor);
+  outline-offset: 2px;
+}
+
+.card {
+  padding: 1.25rem;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--elevation-1);
+}
+
+@supports (backdrop-filter: blur(12px)) {
+  .container,
+  .profile-wrapper,
+  .tracker-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(12px);
+  }
+}
+
+.container,
+.profile-wrapper,
+.tracker-card {
+  border-radius: var(--radius);
+  box-shadow: var(--elevation-3);
+  padding: var(--gap);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.875rem 0.75rem;
+  margin-bottom: var(--gap);
+  border: 1px solid var(--borderColor);
+  border-radius: var(--radius-sm);
+  background-color: var(--inputBg);
+  color: var(--textPrimary);
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus-visible {
+  outline: 2px solid var(--primaryColor);
+  outline-offset: 2px;
+  border-color: var(--primaryColor);
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: calc(var(--gap) * 1.5);
+}
+
+.input-wrapper input {
+  padding: 0.875rem 0.75rem 0.375rem 0.75rem;
+}
+
+.input-wrapper label {
+  position: absolute;
+  top: 0.625rem;
+  left: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--textSecondary);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: var(--bgColor);
+  padding: 0 0.25rem;
+}
+
+.input-wrapper input:focus-visible + label,
+.input-wrapper input:valid + label {
+  top: -0.625rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--primaryColor);
+}
+
+h1, h2, h3, h4 {
+  color: var(--primaryColor);
+  margin-bottom: 0.9375rem;
+}
+
+p {
+  color: var(--textSecondary);
+  margin-bottom: var(--gap);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.error {
+  background-color: var(--errorColor);
+  color: var(--textPrimary);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--gap);
+  text-align: center;
+}

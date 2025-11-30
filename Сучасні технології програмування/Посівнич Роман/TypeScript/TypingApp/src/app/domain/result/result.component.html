@@ -1,0 +1,114 @@
+<div class="result-container">
+  <h2 class="title">Результати гри</h2>
+
+  <div class="chart-wrapper">
+    <h3 class="chart-title">WPM по секундах</h3>
+    <canvas
+      baseChart
+      [data]="wpmChartData"
+      [options]="wpmChartOptions"
+      [type]="'line'"
+    >
+    </canvas>
+  </div>
+
+  <div class="chart-wrapper">
+    <h3 class="chart-title">Помилки по секундах</h3>
+    <canvas
+      baseChart
+      [data]="mistakeChartData"
+      [options]="mistakeChartOptions"
+      [type]="'bar'"
+    >
+    </canvas>
+  </div>
+
+  <div class="summary-row">
+    <div class="summary-item">
+      <span class="label">WPM</span>
+      <span class="value">{{ gameStats.wpm }}</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Accuracy</span>
+      <span class="value">{{ gameStats.accuracy }} %</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Загальні помилки</span>
+      <span class="value">{{ gameStats.mistakes }}</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Час гри</span>
+      <span class="value">{{ gameStats.matchTime }} s</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Символи</span>
+      <span class="value">{{ gameStats.raw }}</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">XP</span>
+      <span class="value">{{ gameStats.xp }}</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Режим</span>
+      <span class="value">{{ gameStats.mode === 0 ? 'Time' : 'Words' }}</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Довжина</span>
+      <span class="value">
+        {{
+          gameStats.mode === 0
+            ? (gameStats.gameLength / 1000) + ' s'
+            : gameStats.gameLength + ' words'
+        }}
+      </span>
+    </div>
+    <div class="summary-item">
+      <span class="label">Мова</span>
+      <span class="value">{{ gameStats.language.toUpperCase() }}</span>
+    </div>
+  </div>
+
+  <div class="word-errors-section" *ngIf="wordStats.length">
+    <h3 class="section-title">Статистика по словах</h3>
+    <table class="word-errors-table">
+      <thead>
+        <tr>
+          <th>Слово</th>
+          <th>Введено</th>
+          <th>WPM</th>
+          <th>Помилок</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let w of wordStats" [class.error-row]="w.mistakes > 0">
+          <td>{{ w.word }}</td>
+          <td>
+            <ng-container *ngFor="let c of getChars(w); let i = index">
+              <span [class.wrong]="c !== w.word[i]">{{ c }}</span>
+            </ng-container>
+          </td>
+          <td>{{ w.wpm }}</td>
+          <td>{{ w.mistakes }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+ <div class="lesson-for-mistakes">
+  <h3 class="section-title">Уроки для повторення помилкових літер</h3>
+  <ul class="styled-lesson-list">
+    <li *ngFor="let lesson of lessonsForMistakes" class="lesson-item">
+      <div class="lesson-header">
+        <strong>{{ lesson.title }}</strong>
+      </div>
+      <div class="lesson-actions">
+        <button (click)="goToLesson(lesson.id)" class="start-button">Перейти</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+  <div class="actions">
+    <button routerLink="/typing-game" class="btn-retry">Зіграти ще раз</button>
+  </div>
+</div>

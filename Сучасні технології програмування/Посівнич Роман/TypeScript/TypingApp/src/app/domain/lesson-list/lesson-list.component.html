@@ -1,0 +1,35 @@
+<div class="language-switcher">
+  <select [value]="currentLanguage" (change)="onLanguageChange($any($event.target).value)">
+    <option value="uk">Українська</option>
+    <option value="en">English</option>
+  </select>
+</div>
+
+<div class="lesson-list">
+  <h2>Список уроків</h2>
+  <ul>
+    <li *ngFor="let lesson of lessons" class="lesson-item" [class.completed]="lesson.isCompleted"
+      [class.locked]="!lesson.isUnlocked">
+
+      <div class="lesson-header">
+        <strong>{{ lesson.title }}</strong>
+        <span class="status-badges">
+          <span *ngIf="lesson.isCompleted" class="badge completed-badge">✓ Завершено</span>
+          <span *ngIf="!lesson.isUnlocked" class="badge locked-badge">🔒 Заблоковано</span>
+          <span *ngIf="lesson.isUnlocked && !lesson.isCompleted" class="badge available-badge">Доступно</span>
+        </span>
+      </div>
+
+      <p class="lesson-description">{{ lesson.description }}</p>
+
+
+
+      <div class="lesson-actions">
+        <button [routerLink]="lesson.isUnlocked ? ['/lesson', lesson.id, currentLanguage] : null"
+          [disabled]="!lesson.isUnlocked" class="start-button" [class.disabled]="!lesson.isUnlocked">
+          {{ lesson.isCompleted ? 'Повторити' : 'Почати' }}
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
