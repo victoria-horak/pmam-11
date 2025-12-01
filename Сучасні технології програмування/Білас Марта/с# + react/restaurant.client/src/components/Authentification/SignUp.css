@@ -1,0 +1,14 @@
+
+.signUp-btn{
+    border-color: rgb(6, 78, 36);
+    width: 30rem;
+    border-radius: 13px;
+    background-color: white;
+    color: rgb(6, 78, 36);
+    font-size: 20px;
+}
+.signUp-btn:hover{
+    border-color: rgb(6, 78, 36);
+    background-color: rgb(6, 78, 36);
+    color: rgb(255, 255, 255);
+  }

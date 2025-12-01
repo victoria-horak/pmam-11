@@ -1,0 +1,33 @@
+.category__item {
+  background: #faf7f7;
+  padding: 8px 2px;
+  border-radius: 8px;
+  border-color: #faf7f7;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.category__item:hover {
+  transform: translateY(-7px);
+}
+.category__item:active {
+  background: #b7ebb4;
+}
+.category__img img {
+  width: 70px;
+  height: 70px;
+}
+
+@media (max-width: 640.98px) and (orientation: portrait) {
+  .category__item {
+    padding: 2px 2px;
+  }
+  .category__img img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .category__item h5 {
+    font-size: 0.8rem;
+  }
+}
+

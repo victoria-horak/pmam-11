@@ -1,0 +1,58 @@
+.menuItem_img {
+  border-radius: 10px;
+}
+.menuItem_card {
+  border-radius: 16px;
+  min-height: 100%;
+}
+.menuItem_price {
+  color: rgb(19, 81, 53);
+}
+.menuItem_input {
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 18px;
+  border-radius: 12px;
+}
+.fa-xmark {
+  color: #a9a9a9;
+  cursor: pointer;
+}
+
+@media (max-width: 640.98px) and (orientation: portrait) {
+  .menuItem_card {
+    border-radius: 9px;
+    padding: 0.5rem !important;
+  }
+  .menuItem_input {
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+  .menuItem_img {
+    border-radius: 6px;
+  }
+  .menuItem_name {
+    padding-top: 7px !important;
+    font-size: 0.7rem;
+  }
+  .menuItem_price {
+    font-size: 0.84rem;
+    color: rgb(19, 81, 53);
+  }
+  .menuItem_decrease-but {
+    font-size: 0.8rem;
+  }
+  .menuItem_increase-but {
+    font-size: 0.8rem;
+  }
+  .menuItem_cart {
+    font-size: 0.8rem;
+  }
+  .short-row {
+    height: 30px; 
+    line-height: 0;/* Adjust this value to your preference */
+}
+
+}

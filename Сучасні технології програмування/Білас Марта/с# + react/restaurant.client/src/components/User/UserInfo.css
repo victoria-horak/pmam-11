@@ -1,0 +1,17 @@
+.userInfo-submit-but {
+  border-color: rgb(6, 78, 36);
+  border-radius: 10px;
+  background-color: white;
+  color: rgb(6, 78, 36);
+  font-size: 20px;
+}
+.userInfo-submit-but:hover {
+  border-color: rgb(6, 78, 36);
+  background-color: rgb(6, 78, 36);
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 640.98px) and (orientation: portrait) {
+  .userInfo-submit-but {
+    font-size: 18px;
+  }
+}

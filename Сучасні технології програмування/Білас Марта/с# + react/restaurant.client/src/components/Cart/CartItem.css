@@ -1,0 +1,9 @@
+.cart-img{
+    border-radius: 5px;
+}
+.cart-input{
+    height: 2.3rem; 
+    width: 2.3rem;
+    font-size: 18px;
+    border-radius: 12px;
+}

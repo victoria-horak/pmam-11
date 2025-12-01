@@ -1,0 +1,33 @@
+.custom-offcanvas {
+    width: 34rem !important; 
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .cartNext-but{
+    border-color: rgb(6, 78, 36);
+    width: 10rem;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(6, 78, 36);
+    font-size: 20px;
+  }
+  .cartNext-but:hover{
+    border-color: rgb(6, 78, 36);
+    background-color: rgb(6, 78, 36);
+    color: rgb(255, 255, 255);
+  }
+  .custom-offcanvas-backdrop{
+    background-color: rgb(126, 126, 126);
+  }
+
+.custom-input{
+    border: transparent;
+    border-bottom: 1.8px solid #837e7efa;
+    border-radius: 0%;
+    transition: border-bottom 0.6s ease;
+}
+.custom-input:focus{
+    outline:none;
+    box-shadow: none;
+    border-bottom-color: rgb(26, 201, 69);
+}
