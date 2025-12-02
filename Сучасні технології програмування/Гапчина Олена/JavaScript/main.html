@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ловець Зірок</title>
+    <style>
+      :root {
+        --bg: #0a1030;
+        --panel: #0d1440;
+        --panel-alt: #102159;
+        --accent: #4fa7ff;
+        --shadow-accent: rgba(79, 167, 255, 0.25);
+        --text-main: #d6ecff;
+        --title: #78c7ff;
+        --title-glow: rgba(120, 199, 255, 0.6);
+
+        --win-color: #00e676;
+        --win-glow: rgba(0, 230, 118, 0.5);
+        --lose-color: #e0002b;
+        --lose-glow: rgba(224, 0, 43, 0.5);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px;
+        min-height: 100dvh;
+        color: var(--text-main);
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 35px;
+        color: var(--title);
+        text-shadow: 0 0 8px var(--title-glow);
+        margin-bottom: 10px;
+      }
+
+      .instruction {
+        font-size: 16px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      #star-counter {
+        font-size: 20px;
+        color: var(--title);
+        background: var(--panel-alt);
+        padding: 8px 15px;
+        border-radius: 4px;
+        border: 1px solid var(--accent);
+        margin-bottom: 10px;
+        box-shadow: 0 0 5px var(--shadow-accent);
+        text-align: center;
+      }
+
+      #game-world {
+        width: 95%;
+        max-width: 800px;
+        background: var(--panel);
+        border: 2px solid var(--accent);
+        border-radius: 6px;
+        box-shadow: 0 0 20px var(--shadow-accent);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      #player {
+        position: absolute;
+        image-rendering: pixelated;
+        z-index: 10;
+      }
+
+      .star {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        font-size: 32px;
+        text-align: center;
+        line-height: 32px;
+        pointer-events: none;
+        user-select: none;
+        z-index: 8;
+      }
+
+      .game-over {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-main);
+        font-size: 28px;
+        font-weight: 500;
+        text-align: center;
+        border-radius: 6px;
+        display: none;
+        z-index: 20;
+      }
+
+      .game-over.win-state {
+        color: var(--win-color);
+        border: 4px solid var(--accent);
+        box-shadow: 0 0 30px var(--win-glow);
+        text-shadow: 0 0 10px var(--win-glow);
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+      .game-over.lose-state {
+        color: var(--lose-color);
+        border: 4px solid var(--accent);
+        box-shadow: 0 0 30px var(--lose-glow);
+      }
+
+      .touch-controls {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .touch-row {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .touch-button {
+        width: 55px;
+        height: 55px;
+        background: var(--panel-alt);
+        color: var(--text-main);
+        border: 2px outset var(--accent);
+        border-radius: 6px;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        box-shadow: 0 0 10px var(--shadow-accent);
+        touch-action: none;
+        transition: 0.2s ease;
+      }
+
+      .touch-button.pressed {
+        transform: scale(0.9);
+        background: var(--panel);
+      }
+
+      @media (max-width: 650px) {
+        .touch-controls {
+          display: flex;
+        }
+        .star {
+          width: 20px;
+          height: 20px;
+          font-size: 20px;
+          line-height: 20px;
+        }
+        .game-over {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ловець Зірок</h1>
+    <div class="instruction">
+      Використовуйте клавіші або кнопки для руху. <br />Завдання: зібрати всі
+      зірки.
+    </div>
+
+    <div id="star-counter">Зібрано: 0 / 10</div>
+
+    <div id="game-world">
+      <div id="player"></div>
+      <div id="game-over" class="game-over">
+        Ви зібрали всі зірки! <br />Гру завершено.
+      </div>
+    </div>
+
+    <div class="touch-controls">
+      <div class="touch-row">
+        <div class="touch-button" data-dir="UP">↑</div>
+      </div>
+      <div class="touch-row">
+        <div class="touch-button" data-dir="LEFT">←</div>
+        <div class="touch-button" data-dir="DOWN">↓</div>
+        <div class="touch-button" data-dir="RIGHT">→</div>
+      </div>
+    </div>
+
+    <script>
+      const FRAME_WIDTH = 32,
+        FRAME_HEIGHT = 48,
+        FRAME_COUNT = 8,
+        ANIMATION_FPS = 10;
+      const PLAYER_SPEED = 1.2,
+        frameDuration = 1000 / ANIMATION_FPS;
+      const SPRITE_SHEETS = {
+        EAST: "./images/blue_walk_EAST-Sheet.png",
+        WEST: "./images/blue_walk_WEST-Sheet.png",
+      };
+
+      const WORLD_WIDTH = 2500;
+      const WORLD_HEIGHT = 1800;
+      const STAR_COUNT = 10;
+      const ENEMY_COUNT = 5;
+      const ENEMY_SPEED = 0.8;
+
+      const playerEl = document.getElementById("player");
+      const gameWorldEl = document.getElementById("game-world");
+      const gameOverEl = document.getElementById("game-over");
+      const starCounterEl = document.getElementById("star-counter");
+
+      const player = {
+        x: WORLD_WIDTH / 2,
+        y: WORLD_HEIGHT / 2,
+        direction: "EAST",
+        isMoving: false,
+        currentFrame: 0,
+      };
+      const keysPressed = {};
+      let lastTimestamp = 0,
+        animationTimer = 0,
+        gameRunning = true;
+
+      let cameraX = 0;
+      let cameraY = 0;
+      let stars = [];
+      let enemies = [];
+
+      let starsCollected = 0;
+      let totalStars = STAR_COUNT;
+
+      function updateStarCounter() {
+        starCounterEl.textContent = `Зібрано: ${starsCollected} / ${totalStars}`;
+      }
+
+      function updatePlayerScale() {
+        const scaleW = gameWorldEl.clientWidth / 800;
+        const scaleH = gameWorldEl.clientHeight / 600;
+        let scale = Math.min(scaleW, scaleH) * 2.5;
+        if (window.innerWidth <= 650) scale *= 1.3;
+        playerEl.style.width = FRAME_WIDTH * scale + "px";
+        playerEl.style.height = FRAME_HEIGHT * scale + "px";
+        playerEl.style.backgroundSize =
+          FRAME_WIDTH * FRAME_COUNT * scale +
+          "px " +
+          FRAME_HEIGHT * scale +
+          "px";
+        playerEl.dataset.scale = scale;
+      }
+      window.addEventListener("resize", updatePlayerScale);
+
+      document.addEventListener("keydown", (e) => {
+        const key = e.key.toUpperCase();
+        if (["ARROWUP", "ARROWDOWN", "ARROWLEFT", "ARROWRIGHT"].includes(key)) {
+          keysPressed[key] = true;
+          player.isMoving = true;
+          e.preventDefault();
+        }
+      });
+      document.addEventListener("keyup", (e) => {
+        const key = e.key.toUpperCase();
+        if (["ARROWUP", "ARROWDOWN", "ARROWLEFT", "ARROWRIGHT"].includes(key)) {
+          keysPressed[key] = false;
+          player.isMoving =
+            keysPressed["ARROWUP"] ||
+            keysPressed["ARROWDOWN"] ||
+            keysPressed["ARROWLEFT"] ||
+            keysPressed["ARROWRIGHT"];
+        }
+      });
+
+      document.querySelectorAll(".touch-button").forEach((btn) => {
+        btn.addEventListener("touchstart", (e) => {
+          btn.classList.add("pressed");
+          const dir = btn.dataset.dir.toUpperCase();
+          keysPressed["ARROW" + dir] = true;
+          player.isMoving = true;
+          e.preventDefault();
+        });
+        btn.addEventListener("touchend", (e) => {
+          btn.classList.remove("pressed");
+          const dir = btn.dataset.dir.toUpperCase();
+          keysPressed["ARROW" + dir] = false;
+          player.isMoving =
+            keysPressed["ARROWUP"] ||
+            keysPressed["ARROWDOWN"] ||
+            keysPressed["ARROWLEFT"] ||
+            keysPressed["ARROWRIGHT"];
+        });
+      });
+
+      function updatePosition() {
+        if (!gameRunning) return;
+        let dx = 0,
+          dy = 0;
+        const scale = parseFloat(playerEl.dataset.scale || 2.5);
+        const displayW = FRAME_WIDTH * scale,
+          displayH = FRAME_HEIGHT * scale;
+
+        if (keysPressed["ARROWLEFT"]) {
+          dx -= PLAYER_SPEED;
+          player.direction = "WEST";
+        }
+        if (keysPressed["ARROWRIGHT"]) {
+          dx += PLAYER_SPEED;
+          player.direction = "EAST";
+        }
+        if (keysPressed["ARROWUP"]) dy -= PLAYER_SPEED;
+        if (keysPressed["ARROWDOWN"]) dy += PLAYER_SPEED;
+        const halfW = displayW / 2,
+          halfH = displayH / 2;
+
+        player.x = Math.min(
+          Math.max(player.x + dx, halfW),
+          WORLD_WIDTH - halfW
+        );
+        player.y = Math.min(
+          Math.max(player.y + dy, halfH),
+          WORLD_HEIGHT - halfH
+        );
+      }
+
+      function updateCamera() {
+        const viewW = gameWorldEl.clientWidth;
+        const viewH = gameWorldEl.clientHeight;
+
+        let targetCamX = player.x - viewW / 2;
+        let targetCamY = player.y - viewH / 2;
+
+        cameraX = Math.min(Math.max(targetCamX, 0), WORLD_WIDTH - viewW);
+        cameraY = Math.min(Math.max(targetCamY, 0), WORLD_HEIGHT - viewH);
+      }
+
+      function updateAnimation(timestamp) {
+        if (!gameRunning) return;
+        const deltaTime = timestamp - lastTimestamp;
+        lastTimestamp = timestamp;
+
+        if (player.isMoving) {
+          animationTimer += deltaTime;
+          if (animationTimer >= frameDuration) {
+            player.currentFrame = (player.currentFrame + 1) % FRAME_COUNT;
+            animationTimer %= frameDuration;
+          }
+        } else player.currentFrame = 0;
+
+        playerEl.style.backgroundImage = `url(
+        ${player.direction === "WEST" ? SPRITE_SHEETS.WEST : SPRITE_SHEETS.EAST}
+      )`;
+
+        const scale = parseFloat(playerEl.dataset.scale || 2.5);
+        const bgX = player.currentFrame * FRAME_WIDTH;
+
+        playerEl.style.backgroundPosition = `-${bgX * scale}px 0`;
+
+        playerEl.style.transform = `translate(
+        ${player.x - cameraX - (FRAME_WIDTH * scale) / 2}px, ${
+          player.y - cameraY - (FRAME_HEIGHT * scale) / 2
+        }px
+      )`;
+      }
+
+      const STAR_BG_COUNT = 150;
+      let bgDots = [];
+
+      function generateBackgroundDots() {
+        for (let i = 0; i < STAR_BG_COUNT; i++) {
+          const dot = document.createElement("div");
+          dot.style.position = "absolute";
+          dot.style.width = dot.style.height = "2px";
+          dot.style.borderRadius = "50%";
+          dot.style.background = Math.random() < 0.5 ? "#fff" : "#ffec99";
+          dot.style.pointerEvents = "none";
+          dot.style.zIndex = "1";
+
+          const worldX = Math.random() * WORLD_WIDTH;
+          const worldY = Math.random() * WORLD_HEIGHT;
+
+          dot.dataset.worldX = worldX;
+          dot.dataset.worldY = worldY;
+          gameWorldEl.appendChild(dot);
+          bgDots.push(dot);
+        }
+      }
+
+      function updateWorldElementsPosition() {
+        bgDots.forEach((dot) => {
+          const worldX = parseFloat(dot.dataset.worldX);
+          const worldY = parseFloat(dot.dataset.worldY);
+          dot.style.transform = `translate(${worldX - cameraX}px, ${
+            worldY - cameraY
+          }px)`;
+        });
+
+        stars.forEach((s) => {
+          const worldX = parseFloat(s.dataset.worldX);
+          const worldY = parseFloat(s.dataset.worldY);
+          s.style.transform = `translate(${worldX - cameraX}px, ${
+            worldY - cameraY
+          }px)`;
+        });
+
+        enemies.forEach((e) => {
+          e.el.style.transform = `translate(${e.x - cameraX}px, ${
+            e.y - cameraY
+          }px)`;
+        });
+      }
+
+      function spawnStars() {
+        stars.forEach((s) => s.remove());
+        stars.length = 0;
+
+        starsCollected = 0;
+        totalStars = STAR_COUNT;
+
+        for (let i = 0; i < STAR_COUNT; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          star.textContent = "⭐";
+
+          let x, y;
+          do {
+            x = Math.random() * (WORLD_WIDTH - 32);
+            y = Math.random() * (WORLD_HEIGHT - 32);
+          } while (
+            Math.abs(x + 16 - player.x) < 100 &&
+            Math.abs(y + 16 - player.y) < 100
+          );
+
+          star.dataset.worldX = x;
+          star.dataset.worldY = y;
+          star.style.left = 0 + "px";
+          star.style.top = 0 + "px";
+
+          gameWorldEl.appendChild(star);
+          stars.push(star);
+        }
+        updateStarCounter();
+      }
+
+      function spawnEnemies() {
+        enemies.forEach((e) => e.el.remove());
+        enemies.length = 0;
+
+        for (let i = 0; i < ENEMY_COUNT; i++) {
+          const enemyEl = document.createElement("div");
+          enemyEl.classList.add("star", "enemy");
+          enemyEl.textContent = "🛸";
+
+          let x, y;
+          do {
+            x = Math.random() * (WORLD_WIDTH - 32);
+            y = Math.random() * (WORLD_HEIGHT - 32);
+          } while (
+            Math.abs(x + 16 - player.x) < 200 &&
+            Math.abs(y + 16 - player.y) < 200
+          );
+
+          enemyEl.style.left = 0 + "px";
+          enemyEl.style.top = 0 + "px";
+          gameWorldEl.appendChild(enemyEl);
+
+          enemies.push({
+            el: enemyEl,
+            x: x,
+            y: y,
+            direction: Math.random() * 2 * Math.PI,
+          });
+        }
+      }
+
+      function updateEnemies() {
+        enemies.forEach((e) => {
+          let dx = ENEMY_SPEED * Math.cos(e.direction);
+          let dy = ENEMY_SPEED * Math.sin(e.direction);
+
+          let newX = e.x + dx;
+          let newY = e.y + dy;
+
+          const size = 32;
+
+          let hitWall = false;
+          if (newX < 0 || newX > WORLD_WIDTH - size) {
+            e.direction = Math.PI - e.direction;
+            hitWall = true;
+          }
+          if (newY < 0 || newY > WORLD_HEIGHT - size) {
+            e.direction = -e.direction;
+            hitWall = true;
+          }
+
+          if (hitWall) {
+            dx = ENEMY_SPEED * Math.cos(e.direction);
+            dy = ENEMY_SPEED * Math.sin(e.direction);
+            newX = e.x + dx;
+            newY = e.y + dy;
+          }
+
+          e.x = Math.min(Math.max(newX, 0), WORLD_WIDTH - size);
+          e.y = Math.min(Math.max(newY, 0), WORLD_HEIGHT - size);
+        });
+      }
+
+      function checkStars() {
+        if (!gameRunning) return;
+        const scale = parseFloat(playerEl.dataset.scale || 2.5);
+        const playerRect = {
+          x: player.x - (FRAME_WIDTH * scale) / 2,
+          y: player.y - (FRAME_HEIGHT * scale) / 2,
+          w: FRAME_WIDTH * scale,
+          h: FRAME_HEIGHT * scale,
+        };
+
+        gameOverEl.classList.remove("win-state", "lose-state");
+
+        for (let i = stars.length - 1; i >= 0; i--) {
+          const s = stars[i];
+
+          const sx = parseFloat(s.dataset.worldX);
+          const sy = parseFloat(s.dataset.worldY);
+
+          const starStyle = window.getComputedStyle(s);
+          const sw = parseInt(starStyle.width);
+          const sh = parseInt(starStyle.height);
+
+          if (
+            playerRect.x < sx + sw &&
+            playerRect.x + playerRect.w > sx &&
+            playerRect.y < sy + sh &&
+            playerRect.y + playerRect.h > sy
+          ) {
+            s.remove();
+            stars.splice(i, 1);
+            starsCollected++;
+            updateStarCounter();
+
+            if (stars.length === 0) {
+              gameOverEl.textContent =
+                "МІСІЯ ВИКОНАНА! Всі зірки зібрано! 🌌✨";
+              gameOverEl.classList.add("win-state");
+              gameOverEl.style.display = "flex";
+              gameRunning = false;
+            }
+          }
+        }
+
+        const ENEMY_SIZE = 32;
+        for (const e of enemies) {
+          const ex = e.x;
+          const ey = e.y;
+
+          if (
+            playerRect.x < ex + ENEMY_SIZE &&
+            playerRect.x + playerRect.w > ex &&
+            playerRect.y < ey + ENEMY_SIZE &&
+            playerRect.y + playerRect.h > ey
+          ) {
+            gameOverEl.textContent =
+              "Вас схопили прибульці! Спробуйте ще раз. 🛸";
+            gameOverEl.classList.add("lose-state");
+            gameOverEl.style.display = "flex";
+            gameRunning = false;
+            break;
+          }
+        }
+      }
+
+      function gameLoop(timestamp) {
+        if (gameRunning) {
+          updatePosition();
+          updateCamera();
+          updateAnimation(timestamp);
+          updateEnemies();
+          updateWorldElementsPosition();
+          checkStars();
+          requestAnimationFrame(gameLoop);
+        }
+      }
+
+      function initializeGame() {
+        resizeGameWorld();
+        generateBackgroundDots();
+        spawnStars();
+        spawnEnemies();
+        updateCamera();
+        updateWorldElementsPosition();
+        gameLoop(0);
+      }
+
+      window.addEventListener("load", initializeGame);
+
+      function resizeGameWorld() {
+        const h1 = document.querySelector("h1");
+        const instruction = document.querySelector(".instruction");
+        const buttonsHeight =
+          document.querySelector(".touch-controls")?.offsetHeight || 0;
+        const padding = 20;
+        const starCounterHeight = starCounterEl.offsetHeight + 10;
+
+        const availableHeight =
+          window.innerHeight -
+          h1.offsetHeight -
+          instruction.offsetHeight -
+          starCounterHeight -
+          buttonsHeight -
+          padding -
+          100;
+
+        gameWorldEl.style.height = availableHeight + "px";
+
+        updatePlayerScale();
+      }
+
+      window.addEventListener("resize", () => {
+        resizeGameWorld();
+        updateCamera();
+        updateWorldElementsPosition();
+      });
+    </script>
+  </body>
+</html>
