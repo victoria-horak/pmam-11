@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Замовлення успішне | TechStore</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .success-card {
+            background: white;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            color: #4CAF50;
+            margin-bottom: 30px;
+            animation: bounce 1s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        
+        .success-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: #2b2d42;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .success-message {
+            color: #8d99ae;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .order-details {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border-left: 4px solid #4361ee;
+        }
+        
+        .order-id {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: #4361ee;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .order-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            text-align: left;
+        }
+        
+        .info-item {
+            margin-bottom: 10px;
+        }
+        
+        .info-label {
+            color: #8d99ae;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            color: #2b2d42;
+            font-weight: 500;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #2b2d42;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            animation: confetti-fall 5s linear forwards;
+            z-index: 1000;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-page">
+        <div class="success-card">
+            <div class="success-icon">🎉</div>
+            <h1 class="success-title">Замовлення успішно оформлено!</h1>
+            <p class="success-message">
+                Дякуємо за ваше замовлення! Воно було записане у файл на сервері.<br>
+                Наш менеджер зв'яжеться з вами найближчим часом для підтвердження.
+            </p>
+            
+            <div class="order-details">
+                <div class="order-id" id="orderId">Замовлення #0000</div>
+                <div class="order-info">
+                    <div class="info-item">
+                        <div class="info-label">Дата та час:</div>
+                        <div class="info-value" id="orderDate">Завантаження...</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Статус:</div>
+                        <div class="info-value">📦 Очікує обробки</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="/" class="btn btn-primary">
+                    <span>🏠</span> Повернутися в магазин
+                </a>
+                <button onclick="printOrder()" class="btn btn-secondary">
+                    <span>🖨️</span> Друк замовлення
+                </button>
+            </div>
+            
+            <p style="margin-top: 30px; color: #8d99ae; font-size: 0.9rem;">
+                * Замовлення зберігається у файлі orders.txt на сервері
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Отримання ID замовлення з URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('order') || Date.now();
+        
+        document.getElementById('orderId').textContent = `Замовлення #${orderId}`;
+        document.getElementById('orderDate').textContent = new Date().toLocaleString('uk-UA');
+        
+        // Створення конфетті
+        function createConfetti() {
+            const colors = ['#4361ee', '#3a0ca3', '#f72585', '#4cc9f0', '#f8961e'];
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 50);
+            }
+        }
+        
+        function printOrder() {
+            window.print();
+        }
+        
+        // Запуск конфетті при завантаженні
+        window.addEventListener('load', createConfetti);
+        
+        // Додавання стилів для друку
+        const printStyle = document.createElement('style');
+        printStyle.textContent = `
+            @media print {
+                .success-page {
+                    background: white !important;
+                }
+                .action-buttons, .confetti {
+                    display: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(printStyle);
+    </script>
+</body>
+</html>
