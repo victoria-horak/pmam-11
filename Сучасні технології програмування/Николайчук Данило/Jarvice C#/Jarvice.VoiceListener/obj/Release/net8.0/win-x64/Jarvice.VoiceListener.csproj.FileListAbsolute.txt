@@ -1,0 +1,17 @@
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Release\net8.0\win-x64\Jarvice.VoiceListener.deps.json
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Release\net8.0\win-x64\Jarvice.VoiceListener.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Release\net8.0\win-x64\Jarvice.VoiceListener.pdb
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Release\net8.0\win-x64\Jarvice.CommandProcessor.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Release\net8.0\win-x64\Jarvice.SpeechService.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Release\net8.0\win-x64\Jarvice.CommandProcessor.pdb
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Release\net8.0\win-x64\Jarvice.SpeechService.pdb
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\Jarvice.VoiceListener.csproj.AssemblyReference.cache
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\Jarvice.VoiceListener.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\Jarvice.VoiceListener.AssemblyInfoInputs.cache
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\Jarvice.VoiceListener.AssemblyInfo.cs
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\Jarvice.VoiceListener.csproj.CoreCompileInputs.cache
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\Jarvice..1D98CEF3.Up2Date
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\Jarvice.VoiceListener.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\refint\Jarvice.VoiceListener.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\Jarvice.VoiceListener.pdb
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Release\net8.0\win-x64\ref\Jarvice.VoiceListener.dll

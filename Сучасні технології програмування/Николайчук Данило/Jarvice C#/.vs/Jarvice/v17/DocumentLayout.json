@@ -1,0 +1,656 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Programming\\Pet\\Jarvice\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\services\\dockerworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\services\\dockerworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\commandfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\commandfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\interfaces\\idockerworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\interfaces\\idockerworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D3DB85C-6B6A-C56E-DD00-33964ACD7FF9}|Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj|e:\\programming\\pet\\jarvice\\jarvis.servicehost\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7D3DB85C-6B6A-C56E-DD00-33964ACD7FF9}|Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj|solutionrelative:jarvis.servicehost\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\commands\\reloaddockerservicescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\commands\\reloaddockerservicescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\services\\fileworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\services\\fileworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\configurations\\dockerscripts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\configurations\\dockerscripts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\commands\\restartdockerservicescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\commands\\restartdockerservicescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D3DB85C-6B6A-C56E-DD00-33964ACD7FF9}|Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj|e:\\programming\\pet\\jarvice\\jarvis.servicehost\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D3DB85C-6B6A-C56E-DD00-33964ACD7FF9}|Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj|solutionrelative:jarvis.servicehost\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\commands\\openservicecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\commands\\openservicecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\actions\\ttsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\actions\\ttsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\commands\\turnoffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\commands\\turnoffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\voiceactionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\voiceactionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9304046-2FA1-42BA-BD39-F6202B5B3ECC}|Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj|e:\\programming\\pet\\jarvice\\jarvice.voicelistener\\services\\voicelistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9304046-2FA1-42BA-BD39-F6202B5B3ECC}|Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj|solutionrelative:jarvice.voicelistener\\services\\voicelistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\enums\\voiceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\enums\\voiceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\interfaces\\ifileworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\interfaces\\ifileworkerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\commandprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\commandprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\configurations\\servicesurls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\configurations\\servicesurls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\commands\\closeservicecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\commands\\closeservicecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\jarvice.commandprocessor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\jarvice.commandprocessor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\actions\\randomfilevoiceaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\actions\\randomfilevoiceaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\interfaces\\ivoiceaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\interfaces\\ivoiceaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\interfaces\\ivoiceactionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\interfaces\\ivoiceactionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\actions\\filevoiceaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\actions\\filevoiceaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\services\\speechservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\services\\speechservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\interfaces\\ispeechservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\interfaces\\ispeechservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D3DB85C-6B6A-C56E-DD00-33964ACD7FF9}|Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj|e:\\programming\\pet\\jarvice\\jarvis.servicehost\\jarvis.servicehost.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7D3DB85C-6B6A-C56E-DD00-33964ACD7FF9}|Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj|solutionrelative:jarvis.servicehost\\jarvis.servicehost.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\interfaces\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\interfaces\\icommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9304046-2FA1-42BA-BD39-F6202B5B3ECC}|Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj|e:\\programming\\pet\\jarvice\\jarvice.voicelistener\\jarvice.voicelistener.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D9304046-2FA1-42BA-BD39-F6202B5B3ECC}|Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj|solutionrelative:jarvice.voicelistener\\jarvice.voicelistener.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|e:\\programming\\pet\\jarvice\\jarvice.speechservice\\jarvice.speechservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{03024ADA-75F4-48D5-8614-E640B0C771F9}|Jarvice.SpeechService\\Jarvice.SpeechService.csproj|solutionrelative:jarvice.speechservice\\jarvice.speechservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|e:\\programming\\pet\\jarvice\\jarvice.commandprocessor\\interfaces\\icommandprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD89C6D-5EDF-44DB-BDE1-591310796A51}|Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj|solutionrelative:jarvice.commandprocessor\\interfaces\\icommandprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9304046-2FA1-42BA-BD39-F6202B5B3ECC}|Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj|e:\\programming\\pet\\jarvice\\jarvice.voicelistener\\interfaces\\ivoicelistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9304046-2FA1-42BA-BD39-F6202B5B3ECC}|Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj|solutionrelative:jarvice.voicelistener\\interfaces\\ivoicelistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\publish\\Jarvis.ServiceHost.exe||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Jarvis.ServiceHost\\publish\\Jarvis.ServiceHost.exe||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D3DB85C-6B6A-C56E-DD00-33964ACD7FF9}|Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj|e:\\programming\\pet\\jarvice\\jarvis.servicehost\\workers\\jarvisworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D3DB85C-6B6A-C56E-DD00-33964ACD7FF9}|Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj|solutionrelative:jarvis.servicehost\\workers\\jarvisworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1,
+          "SelectedChildIndex": 13,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:144:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:145:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:143:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:140:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TtsAction.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Actions\\TtsAction.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Actions\\TtsAction.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Actions\\TtsAction.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\Actions\\TtsAction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T16:21:44.451Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommandFactory.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\CommandFactory.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\CommandFactory.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\CommandFactory.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\CommandFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T14:26:15.19Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\appsettings.json",
+              "RelativeDocumentMoniker": "Jarvis.ServiceHost\\appsettings.json",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\appsettings.json",
+              "RelativeToolTip": "Jarvis.ServiceHost\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-16T20:20:27.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FileWorkerService.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Services\\FileWorkerService.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Services\\FileWorkerService.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Services\\FileWorkerService.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Services\\FileWorkerService.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAYwGIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T19:08:31.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IDockerWorkerService.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Interfaces\\IDockerWorkerService.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Interfaces\\IDockerWorkerService.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Interfaces\\IDockerWorkerService.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Interfaces\\IDockerWorkerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T13:17:08.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReloadDockerServicesCommand.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\ReloadDockerServicesCommand.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Commands\\ReloadDockerServicesCommand.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\ReloadDockerServicesCommand.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Commands\\ReloadDockerServicesCommand.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwBYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T14:01:38.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DockerWorkerService.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Services\\DockerWorkerService.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Services\\DockerWorkerService.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Services\\DockerWorkerService.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Services\\DockerWorkerService.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowG0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T13:16:46.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\Program.cs",
+              "RelativeDocumentMoniker": "Jarvis.ServiceHost\\Program.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\Program.cs",
+              "RelativeToolTip": "Jarvis.ServiceHost\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:56:30.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DockerScripts.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Configurations\\DockerScripts.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Configurations\\DockerScripts.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Configurations\\DockerScripts.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Configurations\\DockerScripts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T13:23:19.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RestartDockerServicesCommand.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\RestartDockerServicesCommand.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Commands\\RestartDockerServicesCommand.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\RestartDockerServicesCommand.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Commands\\RestartDockerServicesCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T13:18:28.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OpenServiceCommand.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\OpenServiceCommand.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Commands\\OpenServiceCommand.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\OpenServiceCommand.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Commands\\OpenServiceCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T21:42:40.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TurnOffCommand.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\TurnOffCommand.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Commands\\TurnOffCommand.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\TurnOffCommand.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Commands\\TurnOffCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T21:40:19.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "VoiceListener.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.VoiceListener\\Services\\VoiceListener.cs",
+              "RelativeDocumentMoniker": "Jarvice.VoiceListener\\Services\\VoiceListener.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.VoiceListener\\Services\\VoiceListener.cs",
+              "RelativeToolTip": "Jarvice.VoiceListener\\Services\\VoiceListener.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAYwHAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:29:07.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "VoiceActionFactory.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\VoiceActionFactory.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\VoiceActionFactory.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\VoiceActionFactory.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\VoiceActionFactory.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T16:18:03.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IFileWorkerService.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Interfaces\\IFileWorkerService.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Interfaces\\IFileWorkerService.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Interfaces\\IFileWorkerService.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Interfaces\\IFileWorkerService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T18:39:27.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "VoiceResponse.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Enums\\VoiceResponse.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Enums\\VoiceResponse.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Enums\\VoiceResponse.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\Enums\\VoiceResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T17:52:57.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ServicesUrls.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Configurations\\ServicesUrls.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Configurations\\ServicesUrls.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Configurations\\ServicesUrls.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Configurations\\ServicesUrls.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T18:51:43.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CommandProcessor.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\CommandProcessor.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\CommandProcessor.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\CommandProcessor.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\CommandProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T14:39:13.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CloseServiceCommand.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\CloseServiceCommand.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Commands\\CloseServiceCommand.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Commands\\CloseServiceCommand.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Commands\\CloseServiceCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T10:46:45.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Jarvice.CommandProcessor.csproj",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Jarvice.CommandProcessor.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-16T14:23:28.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ICommand.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Interfaces\\ICommand.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Interfaces\\ICommand.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Interfaces\\ICommand.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Interfaces\\ICommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T15:16:35.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "RandomFileVoiceAction.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Actions\\RandomFileVoiceAction.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Actions\\RandomFileVoiceAction.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Actions\\RandomFileVoiceAction.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\Actions\\RandomFileVoiceAction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T16:23:40.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FileVoiceAction.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Actions\\FileVoiceAction.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Actions\\FileVoiceAction.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Actions\\FileVoiceAction.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\Actions\\FileVoiceAction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T16:22:11.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IVoiceAction.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Interfaces\\IVoiceAction.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Interfaces\\IVoiceAction.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Interfaces\\IVoiceAction.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\Interfaces\\IVoiceAction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T16:19:50.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IVoiceActionFactory.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Interfaces\\IVoiceActionFactory.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Interfaces\\IVoiceActionFactory.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Interfaces\\IVoiceActionFactory.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\Interfaces\\IVoiceActionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T16:17:32.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SpeechService.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Services\\SpeechService.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Services\\SpeechService.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Services\\SpeechService.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\Services\\SpeechService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T20:29:35.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ISpeechService.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Interfaces\\ISpeechService.cs",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Interfaces\\ISpeechService.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Interfaces\\ISpeechService.cs",
+              "RelativeToolTip": "Jarvice.SpeechService\\Interfaces\\ISpeechService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T21:54:46.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Jarvis.ServiceHost.csproj",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj",
+              "RelativeDocumentMoniker": "Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj",
+              "RelativeToolTip": "Jarvis.ServiceHost\\Jarvis.ServiceHost.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-16T12:55:54.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Jarvice.VoiceListener.csproj",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj",
+              "RelativeDocumentMoniker": "Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj",
+              "RelativeToolTip": "Jarvice.VoiceListener\\Jarvice.VoiceListener.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-16T12:27:42.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Jarvice.SpeechService.csproj",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Jarvice.SpeechService.csproj",
+              "RelativeDocumentMoniker": "Jarvice.SpeechService\\Jarvice.SpeechService.csproj",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Jarvice.SpeechService.csproj",
+              "RelativeToolTip": "Jarvice.SpeechService\\Jarvice.SpeechService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-16T15:27:45.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Jarvis.ServiceHost.exe",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\publish\\Jarvis.ServiceHost.exe",
+              "RelativeDocumentMoniker": "Jarvis.ServiceHost\\publish\\Jarvis.ServiceHost.exe",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\publish\\Jarvis.ServiceHost.exe",
+              "RelativeToolTip": "Jarvis.ServiceHost\\publish\\Jarvis.ServiceHost.exe",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000165|",
+              "WhenOpened": "2025-10-16T19:25:19.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "JarvisWorker.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\Workers\\JarvisWorker.cs",
+              "RelativeDocumentMoniker": "Jarvis.ServiceHost\\Workers\\JarvisWorker.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvis.ServiceHost\\Workers\\JarvisWorker.cs",
+              "RelativeToolTip": "Jarvis.ServiceHost\\Workers\\JarvisWorker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:59:35.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IVoiceListener.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.VoiceListener\\Interfaces\\IVoiceListener.cs",
+              "RelativeDocumentMoniker": "Jarvice.VoiceListener\\Interfaces\\IVoiceListener.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.VoiceListener\\Interfaces\\IVoiceListener.cs",
+              "RelativeToolTip": "Jarvice.VoiceListener\\Interfaces\\IVoiceListener.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:28:17.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ICommandProcessor.cs",
+              "DocumentMoniker": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Interfaces\\ICommandProcessor.cs",
+              "RelativeDocumentMoniker": "Jarvice.CommandProcessor\\Interfaces\\ICommandProcessor.cs",
+              "ToolTip": "E:\\Programming\\Pet\\Jarvice\\Jarvice.CommandProcessor\\Interfaces\\ICommandProcessor.cs",
+              "RelativeToolTip": "Jarvice.CommandProcessor\\Interfaces\\ICommandProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T14:28:21.885Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 31,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{797f5b3d-853a-4854-a9f2-c488bac2661b}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

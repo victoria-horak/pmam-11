@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+  margin:0;
+  padding: 5%;
+  text-align: center;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+             
+label {
+  margin: 5px 0 0 5px;
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+} 
+
+/* Buttons */
+.button, [type=submit], [type=reset], [type=button] {
+  -webkit-appearance: none;
+  display: inline-block;
+  border-radius: 4px;
+  background: #535253;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: none;
+  padding: .75rem 1.25rem;
+  margin: 0 0 .5rem 0;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+  
+.button:hover, 
+  [type=submit]:hover, [type=reset]:hover, [type=button]:hover {
+  border: 1px solid #7a7a7a;
+  background: #7a7a7a;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.add-button {
+  border: 1px solid #535253;
+  background: #535253;
+  color: #ffffff;
+  margin: 0 10px 0 0;
+}
+
+.cancel-button {
+  background:transparent ;
+  border: 1px solid #cdcdcd;
+  color: #4e4e4e;
+  margin: 0 0 0 10px;
+}
+  
+.delete-button {
+  background: #ffffff;
+  border: 1px solid #ff0000;
+  color: #ff0000; 
+  margin: 5px;
+}
+
+.delete-button:hover {
+  background: #ff0000;
+  border: 1px solid #ff0000;
+  color:#ffffff;
+}
+
+.new-button {
+  margin: 3% auto;
+  display:block;
+}
+
+/* Container */
+.container, .small-container, .medium-container {
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f262;
+  padding: 20px;
+}
+
+  /* Grid */
+.flex-large {
+  flex-basis: 100%;
+  margin-bottom: 1rem; 
+  padding-left: 1rem;
+  padding-right: 1rem; 
+}
+
+/* Large screen breakpoint */
+@media (min-width: 1000px) {
+  .flex-large {
+    flex: 1;
+    margin-bottom: 0; 
+  } 
+}                 
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%; 
+}
+  
+thead th {
+  border-bottom: 2px solid #dedede; 
+  border-top: 2px solid #dedede; 
+}
+
+td {
+  border-bottom: 1px solid #dedede; 
+}
+
+td:hover {
+  cursor:pointer;
+}
+
+td:last-of-type {
+  cursor:initial;
+}
+  
+th, td {
+  text-align: left;
+  padding: .5rem; 
+}
+
+th:first-of-type {
+  max-width: 0;
+  text-align: left;
+}
+
+td:first-of-type {
+  max-width: 0;
+  text-align: left;
+}
+
+.sortPointer {
+  cursor: pointer;
+}
+
+.sortIcon {
+  color:#E1C699 ;
+}

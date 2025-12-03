@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Jarvis.ServiceHost-8bf6b063-de5b-4557-bdcc-e8e5ed0fdaa4</UserSecretsId>
+    <OutputType>WinExe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jarvice.CommandProcessor\Jarvice.CommandProcessor.csproj" />
+    <ProjectReference Include="..\Jarvice.SpeechService\Jarvice.SpeechService.csproj" />
+    <ProjectReference Include="..\Jarvice.VoiceListener\Jarvice.VoiceListener.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

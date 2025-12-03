@@ -1,0 +1,7 @@
+E:\Programming\Pet\Jarvice\publish\Jarvice.SpeechService.dll
+E:\Programming\Pet\Jarvice\publish\Jarvice.SpeechService.deps.json
+E:\Programming\Pet\Jarvice\publish\Jarvice.SpeechService.pdb
+E:\Programming\Pet\Jarvice\publish\System.Speech.dll
+E:\Programming\Pet\Jarvice\publish\System.Windows.Extensions.dll
+E:\Programming\Pet\Jarvice\publish\runtimes\win\lib\net8.0\System.Speech.dll
+E:\Programming\Pet\Jarvice\publish\runtimes\win\lib\net8.0\System.Windows.Extensions.dll

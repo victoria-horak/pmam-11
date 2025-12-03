@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "aNSoRgjT/QM=",
+  "success": true,
+  "projectFilePath": "E:\\Programming\\Pet\\Jarvice\\Jarvice.SpeechService\\Jarvice.SpeechService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\system.speech\\8.0.0\\system.speech.8.0.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

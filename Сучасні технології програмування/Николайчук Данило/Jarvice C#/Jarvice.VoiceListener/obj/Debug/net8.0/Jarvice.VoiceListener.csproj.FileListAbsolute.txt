@@ -1,0 +1,17 @@
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Debug\net8.0\Jarvice.VoiceListener.deps.json
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Debug\net8.0\Jarvice.VoiceListener.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Debug\net8.0\Jarvice.VoiceListener.pdb
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\Jarvice.VoiceListener.csproj.AssemblyReference.cache
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\Jarvice.VoiceListener.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\Jarvice.VoiceListener.AssemblyInfoInputs.cache
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\Jarvice.VoiceListener.AssemblyInfo.cs
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\Jarvice.VoiceListener.csproj.CoreCompileInputs.cache
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\Jarvice.VoiceListener.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\refint\Jarvice.VoiceListener.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\Jarvice.VoiceListener.pdb
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\ref\Jarvice.VoiceListener.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Debug\net8.0\Jarvice.CommandProcessor.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Debug\net8.0\Jarvice.CommandProcessor.pdb
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\obj\Debug\net8.0\Jarvice..1D98CEF3.Up2Date
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Debug\net8.0\Jarvice.SpeechService.dll
+E:\Programming\Pet\Jarvice\Jarvice.VoiceListener\bin\Debug\net8.0\Jarvice.SpeechService.pdb

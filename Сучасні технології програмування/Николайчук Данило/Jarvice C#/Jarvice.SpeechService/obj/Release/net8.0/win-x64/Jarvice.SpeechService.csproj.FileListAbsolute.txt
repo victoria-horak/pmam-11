@@ -1,0 +1,12 @@
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\bin\Release\net8.0\win-x64\Jarvice.SpeechService.deps.json
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\bin\Release\net8.0\win-x64\Jarvice.SpeechService.dll
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\bin\Release\net8.0\win-x64\Jarvice.SpeechService.pdb
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\Jarvice.SpeechService.csproj.AssemblyReference.cache
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\Jarvice.SpeechService.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\Jarvice.SpeechService.AssemblyInfoInputs.cache
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\Jarvice.SpeechService.AssemblyInfo.cs
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\Jarvice.SpeechService.csproj.CoreCompileInputs.cache
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\Jarvice.SpeechService.dll
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\refint\Jarvice.SpeechService.dll
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\Jarvice.SpeechService.pdb
+E:\Programming\Pet\Jarvice\Jarvice.SpeechService\obj\Release\net8.0\win-x64\ref\Jarvice.SpeechService.dll

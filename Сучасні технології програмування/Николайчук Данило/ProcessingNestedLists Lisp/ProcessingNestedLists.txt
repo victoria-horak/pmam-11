@@ -1,0 +1,75 @@
+(defun load-numbers (file-path)
+  (with-open-file (stream file-path)
+    (read (read-line stream))))
+
+
+(defun max-element-iterative (lst)
+  (let ((max-val (car lst)))
+    (dolist (item lst max-val)
+      (if (listp item)
+          (setq max-val (max max-val (max-element-iterative item)))
+          (setq max-val (max max-val item))))))
+
+(defun max-element-recursive (lst)
+  (if (null lst) 
+      most-negative-fixnum
+      (let ((head (car lst)) 
+            (tail (cdr lst)))
+        (cond
+          ((listp head)
+           (max (max-element-recursive head) (max-element-recursive tail)))
+          (t ;
+           (max head (max-element-recursive tail)))))))
+
+
+(defun factorial (n)
+  (if (zerop n) 1
+      (* n (factorial (- n 1)))))
+
+(defun factorials-iterative (lst)
+  (let ((result '()))
+    (dolist (item lst result)
+      (if (listp item)
+          (setq result (append result (factorials-iterative item)))
+          (setq result (append result (list (factorial item))))))))
+
+(defun factorials-recursive (lst)
+  (if (null lst) 
+      nil
+      (let ((head (car lst))
+            (tail (cdr lst)))
+        (cond
+          ((listp head) (append (factorials-recursive head) (factorials-recursive tail)))
+          (t (cons (factorial head) (factorials-recursive tail)))))))
+
+
+(defun flatten-iterative (lst)
+  (let ((result '()))
+    (dolist (item lst result)
+      (if (listp item)
+          (setq result (append result (flatten-iterative item)))
+          (setq result (append result (list item)))))))
+
+(defun flatten-recursive (lst)
+  (if (null lst)
+      nil
+      (let ((head (car lst))
+            (tail (cdr lst)))
+        (if (listp head)
+            (append (flatten-recursive head) (flatten-recursive tail))
+            (cons head (flatten-recursive tail))))))
+
+
+;(let ((multi-level-list (load-numbers "D:/Lisp/7/numbers.txt")))
+(let ((multi-level-list '(1 (2 3) (4 (5 6)) 7 (8 9 10))))
+  (format t "Factorials (iterative) - ~A~%" (factorials-iterative multi-level-list))
+  (format t "Factorials (recursive) - ~A~%" (factorials-recursive multi-level-list))
+  (format t "~%")
+
+  (format t "Linearized (iterative) - ~A~%" (flatten-iterative multi-level-list))
+  (format t "Linearized (recursive) - ~A~%" (flatten-recursive multi-level-list))
+  (format t "~%")
+  
+  (format t "Max element (iterative) - ~A~%" (max-element-iterative multi-level-list))
+  (format t "Max element (recursive) - ~A~%" (max-element-recursive multi-level-list)))
+
