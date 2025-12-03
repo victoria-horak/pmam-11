@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Симуляція Гравітації JS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+            background-color: #0b0b14;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            user-select: none; 
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #instructions {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            pointer-events: none; 
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 { margin: 0 0 10px 0; font-size: 1.2rem; color: #4facfe; }
+        p { margin: 5px 0; font-size: 0.9rem; color: #ddd; }
+        .highlight { color: #00f2fe; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div id="instructions">
+        <h1>Гравітаційна Пісочниця</h1>
+        <p>1. Натисніть та потягніть (Drag), щоб задати вектор швидкості.</p>
+        <p>2. Відпустіть, щоб ініціалізувати нове тіло.</p>
+        <p>Кількість об'єктів: <span id="count" class="highlight">0</span></p>
+    </div>
+
+    <canvas id="simCanvas"></canvas>
+
+    <script>
+        /**
+         * Блок ініціалізації Canvas та контексту рендерингу.
+         */
+        const canvas = document.getElementById('simCanvas');
+        const ctx = canvas.getContext('2d');
+        const countDisplay = document.getElementById('count');
+
+        let width, height;
+
+        // Адаптація розмірів canvas під поточні розміри вікна перегляду (Viewport)
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        /**
+         * Конфигурація фізичної моделі.
+          G - Гравітаційна стала (коефіцієнт масштабування сили).
+          TRAIL_LENGTH - Кількість збережених позицій для візуалізації траєкторії.
+         */
+        const G = 0.5;
+        const TRAIL_LENGTH = 20;
+
+        // Масив об'єктів сцени (планет)
+        const planets = [];
+
+        /**
+         * Клас Planet
+         * Описує фізичні властивості та методи візуалізації небесного тіла.
+         */
+        class Planet {
+            constructor(x, y, vx, vy, mass, color) {
+                this.x = x;       // Координата X
+                this.y = y;       // Координата Y
+                this.vx = vx;     // Проєкція швидкості на вісь X
+                this.vy = vy;     // Проєкція швидкості на вісь Y
+                this.mass = mass; // Маса об'єкта
+                this.radius = Math.sqrt(mass) * 2; // Радіус (залежність від маси для візуалізації)
+                this.color = color;
+                this.history = []; // Буфер історії позицій для рендерингу хвоста планеи
+            }
+
+            /**
+             * Метод візуалізації об'єкта та його траєкторії.
+             */
+            draw() {
+                // Рендеринг траєкторії руху
+                ctx.beginPath();
+                for (let i = 0; i < this.history.length; i++) {
+                    ctx.lineTo(this.history[i].x, this.history[i].y);
+                }
+                ctx.strokeStyle = this.color;
+                ctx.globalAlpha = 0.3;
+                ctx.stroke();
+                ctx.globalAlpha = 1.0;
+
+                // Рендеринг тіла планети
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                
+                // Ефект світіння 
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = this.color;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+
+            /**
+             * Метод оновлення фізичного стану об'єкта.
+             * Розраховує взаємодію з іншими тілами за законом всесвітнього тяжіння.
+             */
+            update() {
+                // Оновлення буфера історії
+                this.history.push({ x: this.x, y: this.y });
+                if (this.history.length > TRAIL_LENGTH) {
+                    this.history.shift();
+                }
+
+                // Перебір усіх інших об'єктів для розрахунку гравітаційних сил (Задача N тіл)
+                for (let other of planets) {
+                    if (other === this) continue; // Ігнорування власної гравітації
+
+                    const dx = other.x - this.x;
+                    const dy = other.y - this.y;
+                    const distSq = dx * dx + dy * dy; // Квадрат відстані
+                    const dist = Math.sqrt(distSq);
+
+                    // Перевірка на колізію (або мінімальну дистанцію) для уникнення сингулярності
+                    if (dist > this.radius + other.radius) {
+                        // F = G * (m1 * m2) / r^2
+                        // a = F / m1 => a = G * m2 / r^2
+                        const force = G * (this.mass * other.mass) / distSq;
+                        
+                        // Проєкція сили на осі координат
+                        const ax = (force * dx / dist) / this.mass;
+                        const ay = (force * dy / dist) / this.mass;
+
+                        // Інтегрування швидкості
+                        this.vx += ax;
+                        this.vy += ay;
+                    }
+                }
+
+                // Інтегрування позиції
+                this.x += this.vx;
+                this.y += this.vy;
+            }
+        }
+
+        /**
+         * Логіка взаємодії з користувачем.
+         * Реалізація механіки "Drag & Shoot" для створення нових об'єктів.
+         */
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragStartY = 0;
+        let currentMouseX = 0;
+        let currentMouseY = 0;
+
+        function getRandomColor() {
+            const hue = Math.floor(Math.random() * 360);
+            return `hsl(${hue}, 100%, 60%)`;
+        }
+
+        function onDown(x, y) {
+            isDragging = true;
+            dragStartX = x;
+            dragStartY = y;
+            currentMouseX = x;
+            currentMouseY = y;
+        }
+
+        function onMove(x, y) {
+            if (isDragging) {
+                currentMouseX = x;
+                currentMouseY = y;
+            }
+        }
+
+        function onUp() {
+            if (!isDragging) return;
+            isDragging = false;
+
+            // Розрахунок вектора початкової швидкості на основі відстані перетягування
+            const vx = (dragStartX - currentMouseX) * 0.05; 
+            const vy = (dragStartY - currentMouseY) * 0.05;
+            
+            // Генерація випадкової маси
+            const mass = Math.random() * 25 + 5; 
+
+            // Створення нового об'єкта класу Planet
+            const p = new Planet(dragStartX, dragStartY, vx, vy, mass, getRandomColor());
+            planets.push(p);
+            
+            countDisplay.innerText = planets.length;
+        }
+
+        // Реєстрація подій миші
+        window.addEventListener('mousedown', e => onDown(e.clientX, e.clientY));
+        window.addEventListener('mousemove', e => onMove(e.clientX, e.clientY));
+        window.addEventListener('mouseup', onUp);
+
+        // Реєстрація подій Touch
+        window.addEventListener('touchstart', e => {
+            onDown(e.touches[0].clientX, e.touches[0].clientY);
+        }, {passive: false});
+        
+        window.addEventListener('touchmove', e => {
+            if(isDragging) e.preventDefault();
+            onMove(e.touches[0].clientX, e.touches[0].clientY);
+        }, {passive: false});
+
+        window.addEventListener('touchend', onUp);
+
+
+        /**
+         * Головний цикл анімації.
+         * Використовує requestAnimationFrame для синхронізації з частотою оновлення дисплея.
+         */
+        function animate() {
+            // Очищення попереднього кадру з використанням альфа-каналу для ефекту "motion blur"
+            ctx.fillStyle = 'rgba(11, 11, 20, 0.3)'; 
+            ctx.fillRect(0, 0, width, height);
+
+            // Візуалізація вектора прицілювання (інтерфейсний елемент)
+            if (isDragging) {
+                ctx.beginPath();
+                ctx.moveTo(dragStartX, dragStartY);
+                ctx.lineTo(currentMouseX, currentMouseY);
+                ctx.strokeStyle = 'white';
+                ctx.setLineDash([5, 5]);
+                ctx.stroke();
+                ctx.setLineDash([]);
+                
+                ctx.beginPath();
+                ctx.arc(dragStartX, dragStartY, 5, 0, Math.PI*2);
+                ctx.fillStyle = 'white';
+                ctx.fill();
+            }
+
+            // Оновлення фізики та рендеринг усіх об'єктів сцени
+            for (let planet of planets) {
+                planet.update();
+                planet.draw();
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        
+        animate();
+
+    </script>
+</body>
+</html>
